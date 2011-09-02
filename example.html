@@ -9,15 +9,16 @@
 	<p>Countdown to October 31st, 2011</p>
 	<div class="timer"></div>
 	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
 	<script type="text/javascript" src="jquery.countdown.js"></script>
 	<script type="text/javascript">
 		$('.timer').countdown({
 			target: 'October 31, 2011',
 			parts: ['days', 'hours', 'minutes', 'seconds'],
-			separator: ":",
+			separator: "full",
 			leadingZero: true,
-			height: 180
+			height: 180,
+			speed: 200,
 		});
 	</script>
 </body>

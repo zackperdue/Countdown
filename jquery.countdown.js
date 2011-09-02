@@ -48,8 +48,23 @@
 				
 		for (i=0; i < defaults.parts.length; i++){
 			timer.push('<li class="part-'+defaults.parts[i]+'"></li>');
-			if (i !== (defaults.parts.length - 1)){
-				timer.push('<li class="part-separator">'+defaults.separator+'</li>');
+			
+			if (defaults.separator !== ":")
+			{
+				separators = (defaults.parts.length) - 0;
+			}else{
+				separators = (defaults.parts.length) - 1;
+			}
+				
+			if (i !== separators){
+				if(defaults.separator == ":")
+				{
+					timer.push('<li class="part-separator">'+defaults.separator+'</li>');
+				}else if(defaults.separator == "full"){
+					timer.push('<li class="part-separator">'+defaults.parts[i]+'</li>');
+				}else if(defaults.separator == "short"){
+					timer.push('<li class="part-separator">'+defaults.parts[i].substring(0,1)+'</li>');
+				}
 			}
 
 		}
@@ -155,10 +170,10 @@
 				a_minutes = (a_hours - hours) * 60,
 				seconds = Math.floor((a_minutes - minutes) * 60);
 				
-			$('.part-seconds ul').animate({'top': ((defaults.height * seconds) * -1)}, 700);				
-			$('.part-minutes ul').animate({'top': ((defaults.height * minutes) * -1)}, 700);
-			$('.part-hours ul').animate({'top': ((defaults.height * hours) * -1)}, 700);
-			$('.part-days ul').animate({'top': ((defaults.height * days) * -1)}, 700);		
+			$('.part-seconds ul').animate({'top': ((defaults.height * seconds) * -1)}, defaults.speed);				
+			$('.part-minutes ul').animate({'top': ((defaults.height * minutes) * -1)}, defaults.speed);
+			$('.part-hours ul').animate({'top': ((defaults.height * hours) * -1)}, defaults.speed);
+			$('.part-days ul').animate({'top': ((defaults.height * days) * -1)}, defaults.speed);		
 		
 		}, 1000);
 		
