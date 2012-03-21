@@ -13,7 +13,7 @@
  
  $.fn.countdown = function(options)
 {
-
+	// I added this comment
 	var defaults = {
 		target: 'September 24, 2011',
 		parts: ['days', 'hours', 'minutes', 'seconds'],
