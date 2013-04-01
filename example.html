@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Example For jQuery Countdown Demo</title>
+	<link rel="stylesheet" href="jquery.countdown.css" />
+</head>
+<body>
+	<p>Countdown to October 31st, 2011</p>
+	<div class="timer"></div>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+	<script type="text/javascript" src="jquery.countdown.js"></script>
+	<script type="text/javascript">
+		$('.timer').countdown({
+			target: 'October 31, 2011',
+			parts: ['days', 'hours', 'minutes', 'seconds'],
+			separator: "full",
+			leadingZero: true,
+			height: 180,
+			speed: 700,
+			ended: function (){
+				$('.timer').remove();
+				alert("Ended");
+			}
+		});
+	</script>
+</body>
+</html>
